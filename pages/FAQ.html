@@ -5,9 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>FAQ | Nile Calligraphy</title>
+
+    <meta
+        name="description"
+        content="Frequently asked questions about Nile Calligraphy's original Islamic calligraphy paintings, commissions, ordering, delivery and exhibitions."
+    >
 
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -18,26 +26,323 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/responsive.css">
 
+    <style>
+
+        /* ===========================================
+           FAQ PAGE
+        =========================================== */
+
+        .faq-hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--white) 0%,
+                    var(--background) 100%
+                );
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 110px 10%;
+        }
+
+
+        .faq-hero .section-header {
+            margin-bottom: 0;
+        }
+
+
+        /* ===========================================
+           FAQ SECTION
+        =========================================== */
+
+        .faq-section {
+            background: var(--background);
+
+            padding-top: 90px;
+            padding-bottom: 100px;
+        }
+
+
+        .faq-container {
+            max-width: 900px;
+
+            margin: 0 auto;
+        }
+
+
+        /* ===========================================
+           FAQ CATEGORY
+        =========================================== */
+
+        .faq-category {
+            margin-bottom: 65px;
+        }
+
+
+        .faq-category-title {
+            font-family: var(--heading);
+
+            font-size: 32px;
+
+            color: var(--primary);
+
+            margin-bottom: 25px;
+
+            padding-bottom: 12px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        /* ===========================================
+           FAQ ITEM
+        =========================================== */
+
+        .faq-item {
+            background: var(--white);
+
+            border: 1px solid var(--border);
+
+            margin-bottom: 12px;
+
+            box-shadow: var(--shadow-soft);
+
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .faq-item:hover {
+            border-color: rgba(198, 161, 91, 0.55);
+
+            box-shadow: var(--shadow-luxury);
+        }
+
+
+        .faq-item summary {
+            position: relative;
+
+            list-style: none;
+
+            cursor: pointer;
+
+            padding: 22px 55px 22px 25px;
+
+            font-family: var(--body);
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            color: var(--primary);
+        }
+
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+
+        .faq-item summary::after {
+            content: "+";
+
+            position: absolute;
+
+            right: 25px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: var(--secondary);
+
+            font-size: 24px;
+
+            font-weight: 400;
+
+            transition: transform 0.3s ease;
+        }
+
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+
+        .faq-answer {
+            padding: 0 25px 24px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        .faq-answer p {
+            color: var(--muted);
+
+            font-size: 15px;
+
+            margin: 0;
+        }
+
+
+        /* ===========================================
+           FAQ CTA
+        =========================================== */
+
+        .faq-cta {
+            max-width: 900px;
+
+            margin: 10px auto 0;
+
+            padding: 60px 45px;
+
+            text-align: center;
+
+            background: var(--primary);
+
+            color: var(--white);
+
+            border-radius: 4px;
+
+            box-shadow: var(--shadow-luxury);
+        }
+
+
+        .faq-cta h2 {
+            color: var(--white);
+
+            font-size: 42px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .faq-cta p {
+            max-width: 650px;
+
+            margin: 0 auto 30px;
+
+            color: rgba(255, 255, 255, 0.72);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        .faq-cta .primary-btn {
+            display: inline-block;
+
+            background: var(--secondary);
+
+            color: var(--primary);
+
+            border: 1px solid var(--secondary);
+        }
+
+
+        .faq-cta .primary-btn:hover {
+            background: var(--white);
+
+            color: var(--primary);
+
+            border-color: var(--white);
+        }
+
+
+        /* ===========================================
+           FAQ MOBILE
+        =========================================== */
+
+        @media (max-width: 768px) {
+
+            .faq-hero {
+                padding: 75px 6%;
+            }
+
+            .faq-section {
+                padding-top: 60px;
+
+                padding-bottom: 70px;
+            }
+
+            .faq-category {
+                margin-bottom: 50px;
+            }
+
+            .faq-category-title {
+                font-size: 28px;
+            }
+
+            .faq-item summary {
+                padding: 20px 50px 20px 20px;
+
+                font-size: 15px;
+            }
+
+            .faq-answer {
+                padding: 0 20px 22px;
+            }
+
+            .faq-cta {
+                margin-left: 6%;
+
+                margin-right: 6%;
+
+                padding: 45px 25px;
+            }
+
+            .faq-cta h2 {
+                font-size: 35px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .faq-category-title {
+                font-size: 25px;
+            }
+
+            .faq-item summary {
+                font-size: 14px;
+
+                padding-right: 45px;
+            }
+
+            .faq-answer p {
+                font-size: 14px;
+            }
+
+            .faq-cta h2 {
+                font-size: 31px;
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- Announcement -->
 
-    <div class="announcement">
-
-        Handcrafted Islamic Art • Original Works • Uganda
-
-    </div>
-
-
-    <!-- Header -->
+    <!-- ===========================================
+         HEADER
+    =========================================== -->
 
     <header class="top-header">
 
         <div class="left-tools">
 
-            <button type="button">☰</button>
+            <button type="button" aria-label="Menu">
+                ☰
+            </button>
 
         </div>
 
@@ -51,334 +356,470 @@
 
         <div class="right-tools">
 
-            <button type="button">⌕</button>
+            <button type="button" aria-label="Search">
+                ⌕
+            </button>
 
         </div>
 
     </header>
 
 
-    <!-- Navigation -->
+    <!-- ===========================================
+         NAVIGATION
+    =========================================== -->
 
     <nav>
-
-        <ul>
-
-            <li>
-                <a href="../index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="blogs.html">Blogs</a>
-            </li>
-
-            <li>
-                <a href="original-paintings.html">Original Paintings</a>
-            </li>
-
-            <li>
-                <a href="about.html">About Us</a>
-            </li>
-
-            <li>
-                <a href="faq.html">FAQ</a>
-            </li>
-
-            <li>
-                <a href="reviews.html">Reviews</a>
-            </li>
-
-            <li>
-                <a href="contact.html">Contact</a>
-            </li>
-
-        </ul>
-
-    </nav>
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="original-paintings.html">Original Paintings</a></li>
+<li><a href="exhibitions.html">Exhibitions</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="blogs.html">Blogs</a></li>
+<li><a href="reviews.html">Reviews</a></li>
+<li><a href="FAQ.html" class="active" aria-current="page">FAQs</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
 
 
-    <!-- FAQ Hero -->
+    <!-- ===========================================
+         MAIN
+    =========================================== -->
 
-    <section class="faq-hero">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Frequently Asked Questions
-            </span>
-
-            <h2>Everything You Need To Know</h2>
-
-            <p>
-                From choosing an original artwork to framing,
-                customization and delivery, find answers to the
-                questions our collectors ask most often.
-            </p>
-
-        </div>
-
-    </section>
+    <main>
 
 
-    <!-- FAQ -->
+        <!-- ===========================================
+             FAQ HERO
+        =========================================== -->
 
-    <section class="faq-section">
+        <section class="faq-hero">
 
-        <div class="faq-container">
+            <div class="section-header">
 
+                <span class="section-tag">
+                    Frequently Asked Questions
+                </span>
 
-            <!-- Artwork -->
+                <h1>
+                    Questions Before You Order?
+                </h1>
 
-            <div class="faq-category">
-
-                <h2>About Our Artwork</h2>
-
-
-                <details>
-
-                    <summary>
-                        Are your paintings original?
-                    </summary>
-
-                    <p>
-                        Yes. Our original paintings are individually
-                        handcrafted artworks created as unique pieces.
-                        Availability depends on the specific artwork.
-                    </p>
-
-                </details>
-
-
-                <details>
-
-                    <summary>
-                        Are the artworks handmade?
-                    </summary>
-
-                    <p>
-                        Our original works are created through
-                        handcrafted artistic processes with careful
-                        attention to calligraphy, composition and detail.
-                    </p>
-
-                </details>
-
-
-                <details>
-
-                    <summary>
-                        What type of Islamic calligraphy do you create?
-                    </summary>
-
-                    <p>
-                        Our collection focuses on Islamic calligraphy,
-                        Qur'anic verses, sacred names and other works
-                        inspired by Islamic heritage and artistic tradition.
-                    </p>
-
-                </details>
+                <p>
+                    Learn more about our original Islamic calligraphy,
+                    commissions, ordering process, delivery and
+                    exhibition work.
+                </p>
 
             </div>
 
-
-            <!-- Orders -->
-
-            <div class="faq-category">
-
-                <h2>Orders & Customization</h2>
+        </section>
 
 
-                <details>
+        <!-- ===========================================
+             FAQ CONTENT
+        =========================================== -->
 
-                    <summary>
-                        Can I request a custom artwork?
-                    </summary>
+        <section class="faq-section">
+
+            <div class="faq-container">
+
+
+                <!-- ORIGINAL PAINTINGS -->
+
+                <div class="faq-category">
+
+                    <h2 class="faq-category-title">
+                        Original Paintings
+                    </h2>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Are your paintings original artworks?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Our original paintings are
+                                individually handcrafted Islamic
+                                calligraphy artworks created as
+                                distinctive physical pieces.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can I see the available paintings before ordering?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Our Original Paintings catalogue
+                                presents the available collection with
+                                detailed information about each artwork.
+                                For the latest availability, you can also
+                                contact us directly through WhatsApp.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Are the paintings suitable for homes and offices?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Our artworks are created for
+                                meaningful spaces including homes,
+                                offices, institutions, mosques and
+                                other environments where Islamic art
+                                can be appreciated.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can I ask about the story behind a particular artwork?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. We believe the meaning and thought
+                                behind an artwork are an important part
+                                of the experience. Our catalogue will
+                                provide deeper information about each
+                                piece, and you can contact us for
+                                additional questions.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <!-- CUSTOM COMMISSIONS -->
+
+                <div class="faq-category">
+
+                    <h2 class="faq-category-title">
+                        Custom Commissions
+                    </h2>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Do you accept custom artwork commissions?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. We accept selected custom
+                                commissions depending on the artwork,
+                                requirements and project scope.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can I request a specific Quranic verse or Arabic phrase?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Custom requests can be discussed with
+                                our team. Contact us with the verse,
+                                phrase or concept you have in mind so
+                                we can discuss the artistic possibilities.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can you create artwork for a mosque or institution?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. We are open to larger projects for
+                                mosques, schools, hospitals, hotels,
+                                offices and other institutions. Larger
+                                projects can be discussed directly with
+                                our team.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <!-- ORDERING -->
+
+                <div class="faq-category">
+
+                    <h2 class="faq-category-title">
+                        Ordering & Enquiries
+                    </h2>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            How do I purchase an artwork?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Browse the artwork catalogue and select
+                                the piece you are interested in. For
+                                availability, pricing confirmation and
+                                purchase arrangements, contact us through
+                                WhatsApp.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can I ask questions before deciding to buy?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Absolutely. You can contact us with
+                                questions about an artwork, its
+                                availability, customization, delivery
+                                or any other purchase-related matter
+                                before making a decision.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            How can I contact Nile Calligraphy?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                The fastest way to reach us for artwork
+                                enquiries is through WhatsApp. You can
+                                also use the Contact page for additional
+                                contact information.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <!-- DELIVERY -->
+
+                <div class="faq-category">
+
+                    <h2 class="faq-category-title">
+                        Delivery
+                    </h2>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Do you offer delivery?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Delivery arrangements depend on the
+                                artwork, destination and order. Contact
+                                us with your location and artwork
+                                requirements so we can discuss the
+                                available options.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can artwork be delivered outside Kampala?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Delivery outside Kampala can be discussed
+                                depending on the artwork and destination.
+                                Contact us before ordering so the
+                                appropriate arrangement can be confirmed.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <!-- EXHIBITIONS -->
+
+                <div class="faq-category">
+
+                    <h2 class="faq-category-title">
+                        Exhibitions & Partnerships
+                    </h2>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Do you hold Islamic art exhibitions?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. Exhibitions are an important part of
+                                Nile Calligraphy's vision for presenting
+                                Islamic art and connecting original
+                                artworks with collectors and the wider
+                                community.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can organisations partner with Nile Calligraphy?
+                        </summary>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Yes. We are open to suitable partnerships,
+                                community projects, institutional
+                                commissions and exhibition collaborations.
+                            </p>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <!-- ===========================================
+                     CTA
+                =========================================== -->
+
+                <div class="faq-cta">
+
+                    <h2>
+                        Still Have a Question?
+                    </h2>
 
                     <p>
-                        Yes. Custom commissions can be discussed based
-                        on the desired text, size, style, colours,
-                        framing and intended space.
+                        If you cannot find the answer you're looking for,
+                        speak directly with the Nile Calligraphy team.
+                        We can help you with artwork enquiries,
+                        commissions, availability and other questions.
                     </p>
 
-                </details>
 
+                    <a
+                        href="https://wa.me/256750871771"
+                        class="primary-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ask Us on WhatsApp
+                    </a>
 
-                <details>
+                </div>
 
-                    <summary>
-                        Can I request a specific size?
-                    </summary>
-
-                    <p>
-                        Size options depend on the artwork. For custom
-                        commissions, we can discuss dimensions according
-                        to your space and requirements.
-                    </p>
-
-                </details>
-
-
-                <details>
-
-                    <summary>
-                        Can I choose the frame?
-                    </summary>
-
-                    <p>
-                        Framing options can be discussed when placing
-                        an order. Availability may vary depending on
-                        the artwork and required finish.
-                    </p>
-
-                </details>
 
             </div>
 
-
-            <!-- Delivery -->
-
-            <div class="faq-category">
-
-                <h2>Delivery & Payment</h2>
+        </section>
 
 
-                <details>
-
-                    <summary>
-                        Do you deliver outside Kampala?
-                    </summary>
-
-                    <p>
-                        Yes. Delivery arrangements can be discussed
-                        for customers across Uganda. Delivery time
-                        and cost depend on the destination and artwork.
-                    </p>
-
-                </details>
+    </main>
 
 
-                <details>
-
-                    <summary>
-                        How is my artwork packaged?
-                    </summary>
-
-                    <p>
-                        Original artworks are prepared carefully for
-                        transport with protection appropriate to the
-                        artwork and framing requirements.
-                    </p>
-
-                </details>
-
-
-                <details>
-
-                    <summary>
-                        How do I pay for an artwork?
-                    </summary>
-
-                    <p>
-                        Payment arrangements are confirmed directly
-                        with our team when your order is being finalized.
-                    </p>
-
-                </details>
-
-            </div>
-
-
-            <!-- Viewing -->
-
-            <div class="faq-category">
-
-                <h2>Before You Purchase</h2>
-
-
-                <details>
-
-                    <summary>
-                        Can I see more pictures of an artwork?
-                    </summary>
-
-                    <p>
-                        Yes. If you are interested in a particular
-                        artwork, contact us and we can provide additional
-                        information and available images.
-                    </p>
-
-                </details>
-
-
-                <details>
-
-                    <summary>
-                        Can I physically view an artwork before buying?
-                    </summary>
-
-                    <p>
-                        Viewing arrangements depend on the artwork's
-                        location and availability. Contact us to discuss
-                        the available options.
-                    </p>
-
-                </details>
-
-
-                <details>
-
-                    <summary>
-                        Do you accept mosque, hotel, school or corporate commissions?
-                    </summary>
-
-                    <p>
-                        Yes. We welcome suitable institutional and
-                        commissioned projects. Contact us to discuss
-                        your requirements.
-                    </p>
-
-                </details>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- FAQ CTA -->
-
-    <section class="contact faq-contact">
-
-        <h2>Still Have A Question?</h2>
-
-        <p>
-            If you cannot find the answer you're looking for,
-            speak directly with our team about an artwork,
-            custom commission or delivery.
-        </p>
-
-        <a
-            href="https://wa.me/256750871771"
-            class="primary-btn"
-            target="_blank"
-        >
-            Chat With Us On WhatsApp
-        </a>
-
-    </section>
-
-
-    <!-- Footer -->
+    <!-- ===========================================
+         FOOTER
+    =========================================== -->
 
     <footer>
 
         <div class="footer-container">
 
+
             <div>
 
-                <h3>Nile Calligraphy</h3>
+                <h3>
+                    Nile Calligraphy
+                </h3>
 
                 <p>
                     Preserving Islamic heritage through timeless
@@ -390,16 +831,22 @@
 
             <div>
 
-                <h4>Quick Links</h4>
+                <h4>
+                    Quick Links
+                </h4>
 
                 <ul>
 
                     <li>
-                        <a href="../index.html">Home</a>
+                        <a href="../index.html">
+                            Home
+                        </a>
                     </li>
 
                     <li>
-                        <a href="blogs.html">Blogs</a>
+                        <a href="blogs.html">
+                            Blogs
+                        </a>
                     </li>
 
                     <li>
@@ -409,16 +856,29 @@
                     </li>
 
                     <li>
+                        <a href="FAQ.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="about.html">
                             About Us
                         </a>
                     </li>
 
-                    <li>
-                        <a href="faq.html">
-                            FAQ
-                        </a>
-                    </li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Community
+                </h4>
+
+                <ul>
 
                     <li>
                         <a href="reviews.html">
@@ -427,8 +887,14 @@
                     </li>
 
                     <li>
+                        <a href="about.html">
+                            Community Projects
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="contact.html">
-                            Contact
+                            Partnerships
                         </a>
                     </li>
 
@@ -439,26 +905,9 @@
 
             <div>
 
-                <h4>Community</h4>
-
-                <ul>
-
-                    <li>AFAQ</li>
-
-                    <li>Exhibitions</li>
-
-                    <li>Community Projects</li>
-
-                    <li>Partnerships</li>
-
-                </ul>
-
-            </div>
-
-
-            <div>
-
-                <h4>Contact</h4>
+                <h4>
+                    Contact
+                </h4>
 
                 <p>
                     Kampala, Uganda
@@ -468,7 +917,12 @@
                     +256 750 871 771
                 </p>
 
+                <p>
+                    info@nilecalligraphy.com
+                </p>
+
             </div>
+
 
         </div>
 
@@ -479,6 +933,7 @@
         <p class="copyright">
             © 2026 Nile Calligraphy. All Rights Reserved.
         </p>
+
 
     </footer>
 

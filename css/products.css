@@ -54,30 +54,45 @@
     box-shadow: var(--shadow-luxury);
 }
 
-
 /* ===========================================
-   ARTWORK IMAGE
+   GALLERY IMAGE
 =========================================== */
 
-.card img {
+.gallery-image {
     width: 100%;
-
-    height: 400px;
-
-    object-fit: cover;
-
-    object-position: center;
-
+    overflow: hidden;
     background: #EAE5DB;
 
-    transition:
-        transform 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card:hover img {
+/* Portrait artwork */
+.gallery-image.portrait-image {
+    aspect-ratio: 4 / 5;
+}
+
+/* Horizontal artwork */
+.gallery-image.horizontal-image {
+    aspect-ratio: 3 / 2;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.gallery-card:hover .gallery-image img {
     transform: scale(1.025);
 }
-
 
 /* ===========================================
    CARD CONTENT
@@ -159,26 +174,17 @@
 /* ===========================================
    MOBILE
 =========================================== */
-
 @media (max-width: 768px) {
 
-    .card {
+    .gallery-card {
         flex-basis: 285px;
-    }
-
-    .card img {
-        height: 350px;
     }
 }
 
 @media (max-width: 480px) {
 
-    .card {
+    .gallery-card {
         flex-basis: 270px;
-    }
-
-    .card img {
-        height: 330px;
     }
 }
 
@@ -354,5 +360,76 @@
 
     .signature-image {
         height: 350px;
+    }
+}
+
+/* ===========================================
+   EXHIBITION GALLERY
+=========================================== */
+
+.exhibition-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 45px;
+}
+
+.exhibition-image {
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #EAE5DB;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Portrait exhibition images */
+.exhibition-image.portrait-image {
+    aspect-ratio: 4 / 5;
+}
+
+/* Horizontal exhibition images */
+.exhibition-image.horizontal-image {
+    aspect-ratio: 3 / 2;
+}
+
+.exhibition-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.exhibition-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* ===========================================
+   EXHIBITION GALLERY — RESPONSIVE
+=========================================== */
+
+@media (max-width: 900px) {
+
+    .exhibition-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .exhibition-gallery {
+        grid-template-columns: 1fr;
     }
 }

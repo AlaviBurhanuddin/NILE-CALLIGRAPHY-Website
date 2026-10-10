@@ -218,3 +218,13 @@ nav a:hover {
 nav a:hover::after {
     width: 100%;
 }
+
+/* Homepage navigation interactions */
+@media (max-width: 768px) {
+  #site-nav { display: none; }
+  #site-nav.nav-open { display: block; }
+  #site-nav.nav-open ul { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  #site-nav.nav-open li { border-bottom: 1px solid var(--border); }
+  #site-nav.nav-open a { display: block; padding: 13px 5px; font-size: 14px; }
+}
+.menu-btn[aria-expanded="true"] { color: var(--secondary); }
