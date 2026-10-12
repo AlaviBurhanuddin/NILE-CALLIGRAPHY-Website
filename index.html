@@ -79,7 +79,17 @@
 </nav>
 <main>
 <!-- Hero -->
-<section aria-labelledby="hero-title" class="hero" id="home">
+<section aria-labelledby="hero-title" class="hero" id="home" data-hero-carousel>
+<div class="hero-bg-carousel" aria-hidden="true">
+<div class="hero-bg-slide is-active" style="background-image:url('images/product1.jpg')"></div>
+<div class="hero-bg-slide" style="background-image:url('images/product3.jpg')"></div>
+<div class="hero-bg-slide" style="background-image:url('images/product5.jpg')"></div>
+<div class="hero-bg-slide" style="background-image:url('images/product6.jpg')"></div>
+<div class="hero-bg-slide" style="background-image:url('images/product7.jpg')"></div>
+<div class="hero-bg-slide" style="background-image:url('images/product9.jpg')"></div>
+<div class="hero-bg-slide" style="background-image:url('images/product10.jpg')"></div>
+<div class="hero-bg-slide" style="background-image:url('images/product12.jpg')"></div>
+</div>
 <div class="hero-overlay">
 <div class="hero-content">
 <span class="hero-tag">
@@ -104,7 +114,7 @@
 
                     </p>
 <div class="hero-buttons">
-<a class="primary-btn" href="#shop">
+<a class="primary-btn" href="#collection">
 
                             Explore Collection
 
@@ -137,6 +147,7 @@
 <div class="artwork-row-section">
 <div class="artwork-row-header">
 <span class="section-tag">Portrait Collection</span>
+<span class="row-counter" data-row-counter="portrait" aria-live="polite"><span data-row-current>01</span><span aria-hidden="true"> / </span><span data-row-total>04</span></span>
 </div>
 <div class="artwork-row">
 <article class="gallery-card">
@@ -189,6 +200,7 @@
 <div class="artwork-row-section horizontal-artwork-section">
 <div class="artwork-row-header">
 <span class="section-tag">Horizontal Collection</span>
+<span class="row-counter" data-row-counter="horizontal" aria-live="polite"><span data-row-current>01</span><span aria-hidden="true"> / </span><span data-row-total>08</span></span>
 </div>
 <div class="artwork-row">
 <article class="gallery-card">
@@ -411,11 +423,7 @@
                         The artwork became the centrepiece of our home."
 
                     </p>
-<strong>
-
-                        — Client Name
-
-                    </strong>
+<strong>— Sheikh Mansoor Nadir</strong>
 </article>
 <article class="review-card" tabindex="0">
 <h3>★★★★★</h3>
@@ -425,11 +433,7 @@
                         craftsmanship from beginning to end."
 
                     </p>
-<strong>
-
-                        — Client Name
-
-                    </strong>
+<strong>— Mr. Mustafa Khanji</strong>
 </article>
 </div>
 </section>

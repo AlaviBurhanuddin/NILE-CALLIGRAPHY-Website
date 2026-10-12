@@ -24,3 +24,42 @@ nav#primary-nav a{position:relative}
 nav#primary-nav a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--nc-gold);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
 nav#primary-nav a:hover::after,nav#primary-nav a:focus-visible::after{transform:scaleX(1)}
 @media(prefers-reduced-motion:reduce){nav#primary-nav a::after{transition:none}}
+
+/* ============================================================
+   OPERATIONAL HOMEPAGE UPDATE — MOBILE NAV, HERO ROTATION,
+   AND VISIBLE COLLECTION PROGRESS
+   ============================================================ */
+.hero{background-image:none!important}
+.hero-bg-carousel{position:absolute;inset:-2%;z-index:-2;overflow:hidden;background:#242119}
+.hero-bg-slide{position:absolute;inset:0;background-position:center 44%;background-size:cover;background-repeat:no-repeat;opacity:0;transform:scale(1.035);filter:blur(1.4px);transition:opacity .75s ease,transform 5s ease}
+.hero-bg-slide.is-active{opacity:1;transform:scale(1)}
+.hero::before{z-index:-1}
+.hero::after{z-index:-1}
+.artwork-row-header{gap:16px}
+.row-counter{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;padding:8px 10px;border:1px solid rgba(196,147,58,.38);color:var(--nc-muted);font-size:.68rem;letter-spacing:.1em;font-variant-numeric:tabular-nums;background:rgba(255,253,248,.72)}
+.row-counter [data-row-current]{font-size:.9rem;color:#98702c;font-weight:700}
+.row-counter [data-row-total]{color:var(--nc-muted)}
+.gallery-card{position:relative}
+.gallery-card:focus-visible{outline:2px solid var(--nc-gold);outline-offset:3px}
+
+/* Keep every destination discoverable at the top of the home page on phones. */
+@media(max-width:640px){
+  nav#primary-nav{display:block!important;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--nc-line);background:rgba(245,240,230,.98);backdrop-filter:blur(14px)}
+  nav#primary-nav ul{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:0 10px;padding:5px 10px 8px;max-width:100%;}
+  nav#primary-nav li{flex:0 0 auto;border:0;}
+  nav#primary-nav a{display:block;padding:9px 2px 8px;font-size:.57rem;letter-spacing:.035em;white-space:normal;line-height:1.2;}
+  nav#primary-nav a::after{bottom:2px;}
+  .menu-btn{display:none!important;}
+  .top-header{position:relative;}
+  .hero{min-height:calc(82svh - 120px);}
+  .hero-bg-slide{background-position:center center;}
+  .row-counter{font-size:.62rem;padding:7px 8px;}
+}
+@media(max-width:380px){
+  nav#primary-nav ul{gap:0 7px;padding-left:7px;padding-right:7px;}
+  nav#primary-nav a{font-size:.53rem;}
+  .artwork-row-header{align-items:flex-start;}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-bg-slide{transition:none;filter:none;transform:none;}
+}

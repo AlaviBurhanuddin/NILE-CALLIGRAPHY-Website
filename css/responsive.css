@@ -379,3 +379,40 @@ nav a { white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* Mobile navigation availability across every standard content page.
+   Keep all main destinations visible immediately below the header instead of
+   hiding them behind a menu that visitors may never discover. */
+@media (max-width: 768px) {
+  body:not(.catalogue-page) nav {
+    display: block !important;
+    position: relative;
+    z-index: 40;
+    max-width: 100%;
+  }
+  body:not(.catalogue-page) nav ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0 12px;
+    padding: 5px 10px 8px;
+    min-width: 0;
+  }
+  body:not(.catalogue-page) nav li {
+    flex: 0 0 auto;
+    border: 0;
+  }
+  body:not(.catalogue-page) nav a {
+    display: block;
+    white-space: normal;
+    padding: 9px 2px;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+}
+@media (max-width: 380px) {
+  body:not(.catalogue-page) nav ul { gap: 0 8px; padding-left: 7px; padding-right: 7px; }
+  body:not(.catalogue-page) nav a { font-size: 9px; }
+}

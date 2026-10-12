@@ -95,6 +95,53 @@
   window.addEventListener('resize', updateCurrent, { passive: true });
   updateCurrent();
 
+  // Hero artwork carousel: rotate through the existing landscape artworks every second.
+  // The text and buttons stay fixed; only the softly blurred background changes.
+  const heroCarousel = document.querySelector('[data-hero-carousel]');
+  const heroSlides = heroCarousel ? [...heroCarousel.querySelectorAll('.hero-bg-slide')] : [];
+  if (heroSlides.length > 1 && !reduceMotion) {
+    let heroIndex = heroSlides.findIndex(slide => slide.classList.contains('is-active'));
+    if (heroIndex < 0) heroIndex = 0;
+    window.setInterval(() => {
+      heroSlides[heroIndex].classList.remove('is-active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('is-active');
+    }, 1000);
+  }
+
+  // Portrait and horizontal artwork counters update as each row is swiped or scrolled.
+  // This makes the number of works in each collection visible without adding extra page length.
+  const updateArtworkRowCounter = row => {
+    if (!row) return;
+    const section = row.closest('.artwork-row-section');
+    const counter = section?.querySelector('[data-row-counter]');
+    const current = counter?.querySelector('[data-row-current]');
+    const total = counter?.querySelector('[data-row-total]');
+    const rowCards = [...row.querySelectorAll('.gallery-card')];
+    if (!current || !total || !rowCards.length) return;
+    total.textContent = String(rowCards.length).padStart(2, '0');
+    const rowCenter = row.getBoundingClientRect().left + row.clientWidth / 2;
+    let activeIndex = 0;
+    let closestDistance = Infinity;
+    rowCards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const distance = Math.abs((rect.left + rect.width / 2) - rowCenter);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        activeIndex = index;
+      }
+    });
+    current.textContent = String(activeIndex + 1).padStart(2, '0');
+  };
+  const artworkRows = [...document.querySelectorAll('.artwork-row')];
+  artworkRows.forEach(row => {
+    const update = () => updateArtworkRowCounter(row);
+    row.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+    if ('ResizeObserver' in window) new ResizeObserver(update).observe(row);
+    update();
+  });
+  window.addEventListener('resize', () => artworkRows.forEach(updateArtworkRowCounter), { passive: true });
+
   // Footer year is kept current without changing any other footer content.
   const copyright = document.querySelector('.copyright');
   if (copyright) copyright.textContent = copyright.textContent.replace(/©\s*\d{4}/, `© ${new Date().getFullYear()}`);
